@@ -1,0 +1,22 @@
+package main
+
+	import "time"
+
+	type Book struct {
+		ID        int
+		Title     string
+		Author    string
+		Format    string // pdf, epub, mobi...
+		FilePath  string // ruta o URL
+		CreatedAt time.Time
+		UpdatedAt time.Time
+	}
+	// Avance 2 
+
+	type Store struct {
+		nextID int
+		books  map[int]Book
+	}
+func NewStore() *Store {
+	return &Store{nextID: 1, books: make(map[int]Book)}
+}
